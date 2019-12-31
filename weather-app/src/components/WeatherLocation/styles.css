@@ -1,0 +1,29 @@
+.weatherLocationCont{
+    widows: calc(100% - 20px);
+    padding: 15px;
+    font: 'Roboto', 'sans-serif';
+    box-shadow: 10px 10px 40px -12px rgba(200, 200, 200, .5);
+    margin-right: 10px;
+    margin-left: 10px;
+    min-width: 430px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.weatherLocationCont:hover{
+    background-color: aliceblue;
+}
+
+.locationCont{
+    width: 100%;
+    height: 35px;
+    text-align: left;
+    padding-left: 10px;
+    color: black;
+    line-height: 35px;
+}
+
+.locationCont h1{
+    margin : 0;
+    white-space: nowrap;
+}
