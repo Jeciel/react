@@ -10,12 +10,6 @@ class ForecastExtendedContainer extends Component {
             <ForecastExtended city = {this.props.city}/>
         );
     }
-
-    componentDidMount(){
-        console.log("Este es el state ");
-        console.log(this.props);
-
-    }
 }
 
 ForecastExtendedContainer.propTypes ={

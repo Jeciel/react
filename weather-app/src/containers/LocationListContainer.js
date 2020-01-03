@@ -5,17 +5,12 @@ import PropTypes from 'prop-types'
 import LocationList from './../components/LocationList'
 
 class LocationListContainer extends Component {
-   
-    handleSelectionLocation = city => {
-        console.log("Este es el component ")
-        //console.log(this.props.children)
-        this.setState({city});
-        this.props.setCity(city);
-    };
 
     render() {
         return (
-            <LocationList cities = {this.props.cities} onSelectedLocation = { this.handleSelectionLocation }/>
+            <LocationList 
+                cities = {this.props.cities} 
+                onSelectedLocation = { city => this.props.setCity(city) }/>
         );
     }
 }

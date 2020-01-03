@@ -13,14 +13,26 @@ class WeatherLocation extends Component {
     constructor(porps){
 
         super(porps);
-        const { city, onWeatherLocationClick } = porps;
-
+        const { key2, city, onWeatherLocationClick } = porps;
+        console.log(key2)
         this.state = {
             city,
             data:null,
             onWeatherLocationClick
         };
     }
+
+    render(){
+
+        return (
+        <div 
+            className = "weatherLocationCont" 
+            onClick = {() => this.state.onWeatherLocationClick(this.state.city)}>
+            {this.state.city ? <Location city = {this.state.city}/>  :  <CircularProgress />}
+            {this.state.data ? <WeatherData data = {this.state.data} /> : <CircularProgress /> }
+        </div>
+        )
+    };
 
 
     handleUpdateClick = ({city}) =>{
@@ -42,17 +54,6 @@ class WeatherLocation extends Component {
     componentDidMount() {
         this.handleUpdateClick(this.state);
     }
-
-    render(){
-        const {city, data} = this.state;
-
-        return (
-        <div className = "weatherLocationCont" onClick = {this.state.onWeatherLocationClick}>
-            {city ? <Location city = {city}/>  :  <CircularProgress />}
-            {data ? <WeatherData data = {data} /> : <CircularProgress /> }
-        </div>
-        )
-    };
 }
 
 
