@@ -1,13 +1,15 @@
 import React , {Component} from 'react';
+//import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
-import {Grid, Col, Row} from 'react-flexbox-grid';
-import LocationList from './components/LocationList';
-import ForecastExtended from './components/ForecastExtended';
+import { Grid, Col, Row } from 'react-flexbox-grid';
+import LocationListContainer from './containers/LocationListContainer';
+import ForecastExtendedContainer from './containers/ForecastExtendedContainer';
 
 import './App.css';
+//import { MuiThemeProvider } from '@material-ui/core';
 
 const cities = [
   "Durango, mx",
@@ -17,50 +19,38 @@ const cities = [
 ];
 
 class App extends Component{
-  
-  constructor(){
-    super();
-
-    this.state = {
-      city : null,
-    }
-  }
-  
-  handleSelectionLocation = city => (this.setState({city}));
-
   render(){
-    //const {city} = this.state;
+
     return (
+      <div>
       <Grid className="App">
         <Row>
           <AppBar position = 'sticky'>
             <Toolbar>
               <Typography variant = 'subtitle1' color = 'inherit'>
-                Wheater App
+                Weather App
               </Typography>
             </Toolbar>
           </AppBar>
         </Row>
         <Row>
           <Col xs = {12} md = {6}>
-            <LocationList cities = {cities} onSelectedLocation = { this.handleSelectionLocation }/>
+            <LocationListContainer  cities = {cities}/>
           </Col>
           <Col xs = {12} md = {6}>
             <Paper elevation = {4}>
                 <div className = "details">
                   {
-                    this.state.city  && <ForecastExtended city = {this.state.city ? this.state.city:'No ciudad'} />
-
+                    <ForecastExtendedContainer />
                   }
-                  
                 </div>
             </Paper>
           </Col>
         </Row>
       </Grid>
-    )
-  };
-
-}
+      </div>
+    );//Fin return
+  }
+};
 
 export default App;

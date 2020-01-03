@@ -5,7 +5,13 @@ import './styles.css';
 
 const LocationList = ({cities, onSelectedLocation}) => {
     
+    LocationList.proType = {
+        cities : PropTypes.array.isRequired,
+        onSelectedLocation : PropTypes.func.isRequired
+    }
+
     const handleWeatherLocationClick = city =>{
+        console.log("handleWeatherLocationClick")
         onSelectedLocation(city);
     }
 
@@ -22,10 +28,7 @@ const LocationList = ({cities, onSelectedLocation}) => {
    return <div className = 'locationList'>{strTocomponents(cities)}</div> 
 } 
 
-LocationList.proType = {
-    cities : PropTypes.array.isRequired,
-    onSelectedLocation : PropTypes.func.isRequired
-}
+
 
 
 export default LocationList;
