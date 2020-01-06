@@ -1,15 +1,10 @@
 import {SET_CITY} from './../actions' 
 
 export const city = (state = {}, action) =>{
-    let regreso;
     switch (action.type) {
         case SET_CITY:
-            regreso =  {...state, city: action.payload}
-            break;
+            return action.payload;
         default:
-            regreso = state;
-            break;
+            return state;
     }   
-
-    return regreso;
 }

@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 //import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
-import AppBar from '@material-ui/core/AppBar';
+import { AppBar } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Grid, Col, Row } from 'react-flexbox-grid';
