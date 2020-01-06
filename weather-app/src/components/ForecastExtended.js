@@ -20,7 +20,7 @@ const ForecastExtended = ({city, forecastData}) => (
                 {
                     forecastData ?
                     renderForecastItemsDays(forecastData):
-                    <h3>"cargando Pronostico Extendido..."</h3>
+                    <h3>"Cargando Pronostico Extendido..."</h3>
                 }
             </div>
 )
