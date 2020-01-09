@@ -20,7 +20,6 @@ const cities = [
 
 class App extends Component{
   render(){
-
     return (
       <div>
       <Grid className="App">

@@ -4,25 +4,25 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 const LocationList = ({cities, onSelectedLocation}) => {
-    
-    LocationList.proType = {
-        cities : PropTypes.array.isRequired,
-        onSelectedLocation : PropTypes.func.isRequired
-    }
 
    return   <div className = 'locationList'>
        {
             cities.map( 
                 city=> 
                 <WeatherLocation 
-                    key = {city} 
-                    key2 = {city}
-                    city = {city} 
+                    key = {city.key} 
+                    city = {city.name} 
                     onWeatherLocationClick = { city =>  onSelectedLocation(city) }
+                    data = {city.data}
                 />
             )
         }
     </div> 
 } 
+
+LocationList.proType = {
+    cities : PropTypes.array.isRequired,
+    onSelectedLocation : PropTypes.func.isRequired
+}
 
 export default LocationList;
